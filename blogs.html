@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blogs - Greshma Shaji</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h1>My Medium Blogs</h1>
+        <div id="blog-container">
+            <!-- Medium blogs will be loaded here -->
+        </div>
+    </section>
+
+    <script>
+        async function fetchMediumBlogs() {
+            let username = "greshmashaji"; // Replace with your Medium username
+            let url = `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${username}`;
+
+            try {
+                let response = await fetch(url);
+                let data = await response.json();
+                let posts = data.items.map(post => `
+                    <article>
+                        <h2><a href="${post.link}" target="_blank">${post.title}</a></h2>
+                        <p>${post.pubDate}</p>
+                    </article>
+                `).join('');
+                
+                document.getElementById('blog-container').innerHTML = posts;
+            } catch (error) {
+                console.error("Error fetching blogs:", error);
+            }
+        }
+
+        fetchMediumBlogs();
+    </script>
+
+</body>
+</html>
