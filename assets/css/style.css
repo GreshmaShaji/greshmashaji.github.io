@@ -140,7 +140,7 @@ body {
 } */
 
 a {
-  color: #004d40;
+  color: #788ae3;
 }
 
 /* main blockqoute */
@@ -175,7 +175,7 @@ blockquote * {
 /* main nav */
 
 nav {
-  background: white;
+  background: #dedce3;
   box-shadow: none;
   height: 0;
 }
