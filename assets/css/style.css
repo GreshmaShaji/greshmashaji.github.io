@@ -127,6 +127,90 @@ body {
   color: #333;
   font-size: 18px;
 }
+/* ---------------------------
+   Mobile responsiveness fixes
+--------------------------- */
+
+/* Prevent horizontal scrolling on mobile */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* HERO / INTRO SECTION */
+.intro-content {
+  margin-left: 10%;
+  margin-top: 50px;
+}
+
+/* Make hero content responsive */
+@media (max-width: 600px) {
+  .intro-content {
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    padding: 24px 16px !important;
+    text-align: left;
+  }
+
+  /* Reduce huge headline */
+  #intro h2 {
+    font-size: 2.4rem !important;
+    line-height: 1.15 !important;
+  }
+
+  /* Typed line */
+  #intro h5 {
+    font-size: 1.2rem !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Description line */
+  #intro .caption h5:last-child {
+    font-size: 1.05rem !important;
+    line-height: 1.6 !important;
+    margin-top: 12px !important;
+  }
+
+  /* Social icons spacing */
+  #intro .social {
+    margin-top: 18px !important;
+  }
+
+  /* Buttons stack nicely on mobile */
+  #intro .buttons {
+    margin-top: 18px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  #intro .buttons a {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Avoid full-height causing awkward vertical centering on small screens */
+  .full-height {
+    height: auto !important;
+    min-height: 100vh;
+    padding-bottom: 24px;
+  }
+}
+
+/* Cards: more breathing room on small screens */
+@media (max-width: 600px) {
+  .card .card-content {
+    padding: 18px !important;
+  }
+
+  /* Skills icons: keep grid readable */
+  #skills .row.text-center .col {
+    margin-bottom: 14px;
+  }
+}
+
 
 /* body {
   color: black;
